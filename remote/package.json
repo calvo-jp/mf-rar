@@ -41,7 +41,6 @@
 		]
 	},
 	"devDependencies": {
-		"react-app-rewired": "^2.2.1",
-		"webpack": "^5.83.1"
+		"react-app-rewired": "^2.2.1"
 	}
 }
