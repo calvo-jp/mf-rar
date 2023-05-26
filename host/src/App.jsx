@@ -1,8 +1,10 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Spinner } from "@chakra-ui/react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "remote/Login";
 import Landing from "./Landing";
 import Layout from "./Layout";
+
+const Login = lazy(() => import("remote/Login"));
 
 export default function App() {
 	return (
@@ -11,7 +13,14 @@ export default function App() {
 				<Routes>
 					<Route path="/" Component={Layout}>
 						<Route path="/" element={<Landing />} />
-						<Route path="/login" element={<Login />} />
+						<Route
+							path="/login"
+							element={
+								<Suspense fallback={<Spinner size="sm" />}>
+									<Login />
+								</Suspense>
+							}
+						/>
 					</Route>
 				</Routes>
 			</BrowserRouter>
