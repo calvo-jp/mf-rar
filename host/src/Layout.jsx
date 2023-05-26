@@ -8,10 +8,14 @@ export default function Layout() {
 				<chakra.nav>
 					<chakra.ul listStyleType="none" display="flex" gap={4} alignItems="center">
 						<chakra.li>
-							<Link to="/">Dashboard</Link>
+							<chakra.a as={Link} to="/">
+								Dashboard
+							</chakra.a>
 						</chakra.li>
 						<chakra.li>
-							<Link to="/login">Login</Link>
+							<chakra.a as={Link} to="/login">
+								Login
+							</chakra.a>
 						</chakra.li>
 					</chakra.ul>
 				</chakra.nav>
